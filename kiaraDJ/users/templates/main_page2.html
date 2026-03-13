@@ -1,14 +1,18 @@
 {% extends 'main_general.html' %}
 
 {% block content %}
+<a href="/usersApp/usuaris/">Tots els usuaris</a>
     <h1>Llista d'usuaris</h1>
         <ul>
             {% for persona in msg %}
             <li>id: {{ persona.id }}</li>
             <li>nombre: {{ persona.nombre }}</li>
             <li>apellido: {{ persona.apellido }}</li>
-            <li><a href="/usersApp/unUsuari/{{persona.id}}">Mes info...</a></li>
+            <li>años: {{persona.años}} </li>
+            <li>pais: {{persona.pais}} </li>
+            <li>rol: {{persona.rol}} </li>
             <br>
             {% endfor %}
         </ul>
 {% endblock %}
+
