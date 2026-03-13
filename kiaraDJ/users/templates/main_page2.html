@@ -1,17 +1,13 @@
 {% extends 'main_general.html' %}
 
 {% block content %}
-
     <h1>Llista d'usuaris</h1>
         <ul>
             {% for persona in msg %}
             <li>id: {{ persona.id }}</li>
             <li>nombre: {{ persona.nombre }}</li>
             <li>apellido: {{ persona.apellido }}</li>
-            <li>años: {{persona.años}} </li>
-            <li>pais: {{persona.pais}} </li>
-            <li>rol: {{persona.rol}} </li>
-            <br>
             {% endfor %}
         </ul>
 {% endblock %}
+
