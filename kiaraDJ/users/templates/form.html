@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>FORMULARI PERSON</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ formulari }}
+    <input type="submit">
+</form>
+{% endblock %}
