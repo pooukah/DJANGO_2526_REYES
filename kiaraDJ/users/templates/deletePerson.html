@@ -1,11 +1,13 @@
-{% extends 'main.html' %}
+{% extends 'main_general.html' %}
 
 {% block content %}
 <h1>CONFIRMACIÓ ELIMINACIÓ PERSON</h1>
+<a href="/usersApp/usuaris/">
+    <button>TORNAR</button>
+</a>
 <form>
     {% csrf_token %}
-    <p>Segur que vols eliminar a {{ Person.nombre }}</p>
-    <button><a href="{% url 'usuaris' %}"></a></button>
-    <input type="submit" value="CONFIRM">
+    <p>Segur que vols eliminar a {{ person.nombre }}</p>
+    <input type="submit" value="CONFIRMAR">
 </form>
 {% endblock %}

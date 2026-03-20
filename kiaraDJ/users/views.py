@@ -3,12 +3,12 @@ from .models import Person
 from .forms import PersonForm
 
 def estudiants(request):
-    llistaEst = Person.objects.filter(rol = "EST")
+    llistaEst = Person.objects.filter(rol = "Estudiant")
     msg = {'msg': llistaEst}
     return render(request, 'main_page2.html', msg)
 
 def profes(request):
-    llistaPro = Person.objects.filter(rol = "PRO")
+    llistaPro = Person.objects.filter(rol = "Professor")
     print(llistaPro)
     msg = {'msg': llistaPro}
     return render (request, 'main_page2.html', msg)
@@ -29,9 +29,9 @@ def person_form(request):
         form = PersonForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_page.html')
+            return redirect('usuaris')
     context = {"formulari":form}
-    return render(request, 'formulari.html', context)
+    return render(request, 'form.html', context)
 # UPDATE (html hecho)
 def update_person(request, pk):
     person_id = Person.objects.get(id=pk)
@@ -41,17 +41,17 @@ def update_person(request, pk):
         form = PersonForm(request.POST, instance=person_id)
         if form.is_valid():
             form.save()
-            return redirect('all')
+            return redirect('usuaris')
 
     context = {"formulari":form}
-    return render(request, 'formulari.html', context)
+    return render(request, 'form.html', context)
 # DELETE ()
 def delete_user(request, pk):
     person_id = Person.objects.get(id=pk)
 
     if request.method == "POST":
         person_id.delete()
-        return redirect('get_all_users')
+        return redirect('usuaris')
 
     context = {'person':person_id}
-    return render(request, 'delete_person.html', context)
+    return render(request, 'deletePerson.html', context)

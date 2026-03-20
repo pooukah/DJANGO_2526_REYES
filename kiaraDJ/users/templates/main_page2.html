@@ -2,6 +2,9 @@
 
 {% block content %}
     <h1>Llista d'usuaris</h1>
+    <a href="/usersApp/usuaris/">
+            <button>TORNAR</button>
+    </a>
         <ul>
             {% for persona in msg %}
             <li>id: {{ persona.id }}</li>
@@ -10,11 +13,11 @@
             <li>años: {{persona.años}} </li>
             <li>pais: {{persona.pais}} </li>
             <li>rol: {{persona.rol}} </li>
-            <li><a href="/usersApp/updateUser/">EDITAR</a></li>
-            <li><a href="/usersApp/deleteUser">BORRAR</a></li>
+            <a href="/usersApp/updateUser/{{ persona.id }}">EDITAR</a>
+            <a href="/usersApp/deleteUser/{{ persona.id }}">BORRAR</a>
+            <br>
             <br>
             {% endfor %}
         </ul>
-        <p><a href="/usersApp/usuaris/">Tornar</a></p>
 {% endblock %}
 
