@@ -1,0 +1,16 @@
+{% extends 'main_general.html' %}
+
+{% block content %}
+<h1>Formulari</h1>
+<a href="/usersApp/usuaris/">
+            <button>TORNAR</button>
+</a>
+<br>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ formulari }}
+    <br>
+    <input type="submit" value="ENVIAR">
+</form>
+{% endblock %}

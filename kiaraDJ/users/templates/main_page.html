@@ -2,12 +2,22 @@
 
 {% block content %}
     <h1>Llista d'usuaris</h1>
+    <a href="/usersApp/profes/">
+      <button>PROFESSORS</button>
+    </a>
+    <a href="/usersApp/estudiants/">
+      <button>ESTUDIANTS</button>
+    </a>
+    <a href="/usersApp/formulari/">
+      <button>CREAR NOU USUARI</button>
+    </a>
         <ul>
             {% for persona in msg %}
             <li>id: {{ persona.id }}</li>
             <li>nombre: {{ persona.nombre }}</li>
             <li>apellido: {{ persona.apellido }}</li>
-            <li><a href="/usersApp/unUsuari/{{persona.id}}">Mes info...</a></li>
+            <a href="/usersApp/unUsuari/{{persona.id}}">Mes info...</a>
+            <br>
             <br>
             {% endfor %}
         </ul>
