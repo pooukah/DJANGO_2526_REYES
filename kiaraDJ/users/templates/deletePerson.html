@@ -5,7 +5,7 @@
 <a href="/usersApp/usuaris/">
     <button>TORNAR</button>
 </a>
-<form>
+<form method="POST">
     {% csrf_token %}
     <p>Segur que vols eliminar a {{ person.nombre }}</p>
     <input type="submit" value="CONFIRMAR">
